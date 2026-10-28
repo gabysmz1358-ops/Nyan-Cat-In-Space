@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyan Cat Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Nyan Cat In Space</h1>
+
+        <div id="game-info">
+            <p>Pontos: <span id="score">0</span></p>
+            <p>Recorde: <span id="high-score">0</span></p>
+            <p>Tempo: <span id="time">0</span> segundos</p>
+        </div>
+
+        <button id="music-button" type="button">Ligar música</button>
+    </header>
+
+    <main>
+        <section id="game-board" aria-label="Área do jogo">
+            <img
+                id="background"
+                src="imagens/fundo do jogo.jpg"
+                alt="Fundo azul do espaço"
+            >
+
+            <div id="start-screen">
+                <h2>Prepare-se para voar!</h2>
+                <p>Desvie dos asteroides e colete estrelas bônus.</p>
+                <button id="start-button" type="button">Jogar</button>
+            </div>
+
+            <img
+                id="nyan-cat"
+                src="imagens/Nyan_Cat.gif"
+                alt="Nyan Cat voando pelo espaço"
+            >
+
+            <div id="obstacles">
+                <img
+                    class="asteroid"
+                    src="imagens/asteroide do jogo.png"
+                    alt="Asteroide"
+                    hidden
+                >
+            </div>
+
+            <img
+                id="bonus-star"
+                src="imagens/estrela.gif"
+                alt="Estrela bônus de 5 pontos"
+                hidden
+            >
+
+            <img
+                id="explosion"
+                src="imagens/explosao.png"
+                alt="Explosão do Nyan Cat"
+                hidden
+            >
+
+            <div id="game-over-screen" hidden>
+                <h2>Game Over!</h2>
+                <p>Sua pontuação: <span id="final-score">0</span></p>
+                <button id="restart-button" type="button">Jogar novamente</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pressione ESPAÇO ou toque na tela para voar.</p>
+    </footer>
+
+    <audio id="background-music" src="sons/musica do jogo de fundo.mp3" loop></audio>
+    <audio id="explosion-sound" src="sons/explosao do jogo.mp4"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

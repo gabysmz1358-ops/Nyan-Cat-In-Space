@@ -1,0 +1,248 @@
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #080b24;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+}
+
+header {
+    padding: 20px 15px;
+}
+
+h1 {
+    color: #ff4fd8;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 12px #ff4fd8;
+}
+
+/* PONTUAÇÃO, RECORDE E TEMPO */
+#game-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    margin-bottom: 20px;
+}
+
+#game-info p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* BOTÕES */
+button {
+    background-color: #ff4fd8;
+    color: white;
+    padding: 12px 24px;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #d92ab5;
+    transform: scale(1.05);
+}
+
+#music-button {
+    margin-bottom: 10px;
+}
+
+/* ÁREA DO JOGO */
+#game-board {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    max-width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: #101040;
+    box-shadow: 0 0 20px rgba(100, 100, 255, 0.5);
+    touch-action: none;
+    user-select: none;
+}
+
+/* FUNDO DO ESPAÇO */
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* NYAN CAT */
+#nyan-cat {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    left: 100px;
+    top: 175px;
+    z-index: 4;
+    object-fit: contain;
+}
+
+/* ASTEROIDES */
+#obstacles {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.asteroid {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+/* ESTRELA BÔNUS */
+#bonus-star {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    z-index: 6;
+}
+
+/* EXPLOSÃO */
+#explosion {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    z-index: 7;
+}
+
+/* TELA INICIAL */
+#start-screen {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 30, 0.65);
+}
+
+#start-screen h2,
+#game-over-screen h2 {
+    font-size: 30px;
+    color: #ff4fd8;
+    text-shadow: 0 0 10px #ff4fd8;
+}
+
+#start-screen p,
+#game-over-screen p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* TELA DE GAME OVER */
+#game-over-screen {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 20, 0.9);
+}
+
+/* RESPEITAR O ATRIBUTO HIDDEN DO HTML */
+[hidden] {
+    display: none !important;
+}
+
+/* RODAPÉ */
+footer {
+    padding: 20px 10px;
+    font-size: 14px;
+    color: #ccccff;
+}
+
+/* AJUSTE PARA TELAS MENORES */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    #game-info {
+        gap: 10px 18px;
+    }
+
+    #game-info p {
+        font-size: 14px;
+    }
+
+    #game-board {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    #nyan-cat {
+        width: 13%;
+        left: 12%;
+        top: 39%;
+    }
+
+    .asteroid {
+        width: 10%;
+        height: auto;
+    }
+
+    #bonus-star {
+        width: 7%;
+        height: auto;
+    }
+
+    #explosion {
+        width: 16%;
+        height: auto;
+    }
+
+    #start-screen h2,
+    #game-over-screen h2 {
+        font-size: 22px;
+    }
+
+    #start-screen p,
+    #game-over-screen p {
+        font-size: 13px;
+    }
+
+    #start-screen,
+    #game-over-screen {
+        gap: 12px;
+    }
+
+    button {
+        padding: 9px 16px;
+        font-size: 14px;
+    }
+}
+
